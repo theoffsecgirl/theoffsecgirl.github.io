@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="theoffsecgirl · Bug Hunter, Security Researcher, Tool Developer and Cybersecurity Educator. Research, tooling, teaching and professional contact."
+    content="theoffsecgirl · Bug Hunter, Security Researcher, Tool Developer and Cybersecurity Educator. Offensive security, tooling, research and professional contact."
   />
   <meta name="theme-color" content="#0a0a0a" />
   <title>theoffsecgirl | Bug Hunter & Security Researcher</title>
@@ -21,7 +21,6 @@
     :root {
       --bg: #0a0a0a;
       --bg-alt: rgba(17, 17, 17, 0.82);
-      --surface: rgba(255, 255, 255, 0.035);
       --text: #d7dde7;
       --muted: #9aa4b2;
       --blue: #4da3ff;
@@ -66,7 +65,7 @@
 
     .matrix-bg {
       z-index: 0;
-      opacity: 0.05;
+      opacity: 0.045;
     }
 
     .scanline {
@@ -127,7 +126,7 @@
 
     .hero {
       text-align: center;
-      padding: 2.2rem 0 1.5rem;
+      padding: 2.4rem 0 1.8rem;
     }
 
     .eyebrow {
@@ -165,12 +164,12 @@
     }
 
     .subtitle {
-      max-width: 850px;
+      max-width: 860px;
       margin: 1rem auto 0;
       color: #c6d0df;
-      font-size: clamp(1rem, 2vw, 1.12rem);
-      line-height: 1.8;
-      opacity: 0.95;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      line-height: 1.85;
+      opacity: 0.96;
     }
 
     .roles {
@@ -202,7 +201,12 @@
       border-radius: 16px;
       border: 1px solid var(--border);
       font-weight: 700;
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+      transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition),
+        color var(--transition);
     }
 
     .btn-primary {
@@ -235,7 +239,7 @@
     }
 
     .section-head {
-      max-width: 760px;
+      max-width: 820px;
       margin-bottom: 1.4rem;
     }
 
@@ -261,7 +265,7 @@
     .section-text {
       margin: 0;
       color: #b8c3d4;
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
     .grid-4,
@@ -285,7 +289,10 @@
       -webkit-backdrop-filter: blur(12px);
       padding: 1.55rem;
       box-shadow: var(--shadow);
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+      transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
     }
 
     .card:hover,
@@ -304,7 +311,7 @@
     .card p,
     .card li {
       color: #acb6c4;
-      line-height: 1.75;
+      line-height: 1.8;
       font-size: 0.96rem;
     }
 
@@ -437,7 +444,12 @@
       color: #8dc3ff;
       font-weight: 700;
       font-size: 1rem;
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), color var(--transition), background var(--transition);
+      transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        color var(--transition),
+        background var(--transition);
       word-break: break-word;
       text-align: center;
       letter-spacing: -0.01em;
@@ -490,6 +502,7 @@
       .hero { padding-top: 1.2rem; }
       .grid-4 { grid-template-columns: 1fr; }
       .card { padding: 1.15rem; }
+
       .card-head {
         grid-template-columns: 74px 1fr;
         gap: 0.95rem;
@@ -538,12 +551,11 @@
       <h1 class="title">theoffsecgirl</h1>
 
       <p class="subtitle">
-        Bug Hunter, Security Researcher and Cybersecurity Educator focused on practical offensive security,
-        real-world vulnerability research and tooling that turns repetitive work into scalable workflows.
+        I break down web attack surfaces, build offensive tooling and turn weak signals into real findings.
       </p>
 
       <div class="roles">
-        <code>Bug Bounty · Security Research · Tooling · Teaching</code>
+        <code>Bug Bounty · Research · Tooling · Teaching</code>
       </div>
 
       <div class="hero-actions">
@@ -555,10 +567,10 @@
     <section class="section" id="about">
       <div class="section-head">
         <div class="section-kicker">About</div>
-        <h2 class="section-title">Offensive security with research, clarity and execution.</h2>
+        <h2 class="section-title">Offensive security with research, tooling and practical execution.</h2>
         <p class="section-text">
-          I work across vulnerability research, bug bounty, technical tooling and cybersecurity training.
-          My focus is practical: reducing noise, validating fast and building repeatable workflows that improve both depth and speed.
+          I work across bug bounty, offensive security research, tooling and education, with a strong bias toward practical execution.
+          The goal is simple: reduce noise, move faster and make technical judgment scalable.
         </p>
       </div>
     </section>
@@ -566,35 +578,35 @@
     <section class="section" id="work">
       <div class="section-head">
         <div class="section-kicker">What I do</div>
-        <h2 class="section-title">Four core areas.</h2>
+        <h2 class="section-title">Built around signal, speed and validation.</h2>
       </div>
 
       <div class="grid-4">
         <article class="card">
           <h3 class="mini-title">Bug Bounty</h3>
           <p>
-            Web attack surface analysis, hypothesis-driven testing and vulnerability validation with a focus on impact and report quality.
+            Attack surface exploration, hypothesis-driven testing and validation focused on impact, not noise.
           </p>
         </article>
 
         <article class="card">
           <h3 class="mini-title">Security Research</h3>
           <p>
-            Finding weak signals, testing assumptions and translating technical observations into clear security findings.
+            Turning weak technical signals into reproducible findings with clear security value.
           </p>
         </article>
 
         <article class="card">
           <h3 class="mini-title">Tool Development</h3>
           <p>
-            Building scripts and workflows that remove repetitive friction from recon, triage and validation.
+            Building tooling that removes repetitive friction from recon, triage and validation.
           </p>
         </article>
 
         <article class="card">
           <h3 class="mini-title">Cybersecurity Education</h3>
           <p>
-            Teaching offensive security with an execution-first mindset, focused on practical understanding rather than theory alone.
+            Teaching offensive security through execution, workflow and applied reasoning.
           </p>
         </article>
       </div>
@@ -623,9 +635,9 @@
         <article class="card">
           <h3 class="project-title">WebXray</h3>
           <p>
-            Project focused on improving web visibility, analysis and practical security workflow around attack surface exploration and technical validation.
+            Tooling focused on web attack surface visibility, technical analysis and faster validation during offensive security workflows.
           </p>
-          <a class="project-link" href="https://github.com/theoffsecgirl" target="_blank" rel="noopener noreferrer">
+          <a class="project-link" href="https://github.com/theoffsecgirl/webxray" target="_blank" rel="noopener noreferrer">
             View project →
           </a>
         </article>
@@ -633,7 +645,7 @@
         <article class="card">
           <h3 class="project-title">Bug Bounty Highlights</h3>
           <p>
-            Valid vulnerability reports through Bugcrowd, including two accepted submissions involving NASA-related targets.
+            Multiple valid Bugcrowd submissions, including two accepted reports on NASA-related targets.
           </p>
           <a class="project-link" href="https://bugcrowd.com" target="_blank" rel="noopener noreferrer">
             Learn more →
@@ -647,7 +659,7 @@
         <div class="section-kicker">Contact</div>
         <h2 class="section-title">Professional contact and online presence.</h2>
         <p class="section-text">
-          Available for collaborations, cybersecurity training, technical projects and professional opportunities.
+          Available for collaborations, cybersecurity training and selected technical projects.
         </p>
       </div>
 
