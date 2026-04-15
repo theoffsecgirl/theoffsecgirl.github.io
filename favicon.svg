@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4da3ff"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#0a0a0a"/>
+  <!-- body -->
+  <ellipse cx="16" cy="17" rx="2.2" ry="5.5" fill="url(#g)"/>
+  <!-- left wings -->
+  <path d="M14 14 C10 10 4 11 4 15 C4 18 9 19 14 17 Z" fill="url(#g)"/>
+  <path d="M14 17 C8 17 5 20 6 23 C7 25 12 24 14 20 Z" fill="url(#g)"/>
+  <!-- right wings -->
+  <path d="M18 14 C22 10 28 11 28 15 C28 18 23 19 18 17 Z" fill="url(#g)"/>
+  <path d="M18 17 C24 17 27 20 26 23 C25 25 20 24 18 20 Z" fill="url(#g)"/>
+  <!-- antennae -->
+  <line x1="15" y1="12" x2="12" y2="7" stroke="url(#g)" stroke-width="1.2" stroke-linecap="round"/>
+  <circle cx="12" cy="7" r="1" fill="#4da3ff"/>
+  <line x1="17" y1="12" x2="20" y2="7" stroke="url(#g)" stroke-width="1.2" stroke-linecap="round"/>
+  <circle cx="20" cy="7" r="1" fill="#8b5cf6"/>
+</svg>
