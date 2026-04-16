@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="theoffsecgirl · Bug Hunter, Security Researcher, Tool Developer and Cybersecurity Educator. Offensive security, tooling, research and professional contact." />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#fdf6f8" media="(prefers-color-scheme: light)" />
   <title>theoffsecgirl | Bug Hunter & Security Researcher</title>
 
   <!-- Open Graph -->
@@ -27,20 +28,59 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
+    /* ── Dark mode (default) ── */
     :root {
       --bg: #0a0a0a;
       --bg-alt: rgba(17, 17, 17, 0.82);
+      --bg-body-from: #07090f;
+      --bg-body-mid: #130a10;
+      --bg-body-to: #1a0d15;
       --text: #d7dde7;
+      --text-sub: #c6d0df;
+      --text-card: #acb6c4;
       --muted: #9aa4b2;
       --pink: #FF2D78;
       --pink-2: #ff6fa3;
       --white: #ffffff;
       --border: rgba(255, 45, 120, 0.16);
       --border-strong: rgba(255, 45, 120, 0.45);
+      --border-hr: rgba(255, 45, 120, 0.10);
       --shadow: 0 0 30px rgba(255, 45, 120, 0.15);
+      --nav-bg: rgba(255,255,255,0.03);
+      --card-bg-from: rgba(255,255,255,0.03);
+      --card-bg-to: rgba(255,255,255,0.015);
+      --btn-secondary-bg: rgba(255,255,255,0.03);
+      --matrix-opacity: 0.045;
       --radius: 22px;
       --max-width: 1180px;
       --transition: 180ms ease;
+    }
+
+    /* ── Light mode ── */
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fdf6f8;
+        --bg-alt: rgba(255, 240, 245, 0.92);
+        --bg-body-from: #fff8fb;
+        --bg-body-mid: #fdeef4;
+        --bg-body-to: #fce6ef;
+        --text: #1a0d15;
+        --text-sub: #3d1a28;
+        --text-card: #5a2d3e;
+        --muted: #9a6070;
+        --pink: #c2003e;
+        --pink-2: #c2607a;
+        --white: #1a0d15;
+        --border: rgba(194, 0, 62, 0.14);
+        --border-strong: rgba(194, 0, 62, 0.40);
+        --border-hr: rgba(194, 0, 62, 0.10);
+        --shadow: 0 0 30px rgba(194, 0, 62, 0.10);
+        --nav-bg: rgba(255,255,255,0.72);
+        --card-bg-from: rgba(255,255,255,0.80);
+        --card-bg-to: rgba(255,240,245,0.60);
+        --btn-secondary-bg: rgba(255,255,255,0.60);
+        --matrix-opacity: 0.018;
+      }
     }
 
     * { box-sizing: border-box; }
@@ -54,7 +94,7 @@
       background:
         radial-gradient(circle at top, rgba(255, 45, 120, 0.10), transparent 35%),
         radial-gradient(circle at bottom right, rgba(255, 45, 120, 0.07), transparent 30%),
-        linear-gradient(135deg, #07090f 0%, #130a10 48%, #1a0d15 100%);
+        linear-gradient(135deg, var(--bg-body-from) 0%, var(--bg-body-mid) 48%, var(--bg-body-to) 100%);
       overflow-x: hidden;
       position: relative;
     }
@@ -68,7 +108,7 @@
       pointer-events: none;
     }
 
-    .matrix-bg { z-index: 0; opacity: 0.045; }
+    .matrix-bg { z-index: 0; opacity: var(--matrix-opacity); }
 
     .scanline {
       z-index: 2;
@@ -101,7 +141,7 @@
       padding: 0.8rem 1rem;
       border: 1px solid var(--border);
       border-radius: 18px;
-      background: rgba(255,255,255,0.03);
+      background: var(--nav-bg);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       box-shadow: var(--shadow);
@@ -198,7 +238,7 @@
     .subtitle {
       max-width: 860px;
       margin: 1rem auto 0;
-      color: #c6d0df;
+      color: var(--text-sub);
       font-size: clamp(1rem, 2vw, 1.15rem);
       line-height: 1.85;
       opacity: 0.96;
@@ -210,9 +250,9 @@
       margin-top: 1.2rem;
       padding: 0.82rem 1.2rem;
       border-radius: 16px;
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(255,45,120,0.18);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.24);
+      background: var(--card-bg-from);
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
       font-size: 0.96rem;
     }
 
@@ -256,7 +296,7 @@
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.03);
+      background: var(--btn-secondary-bg);
       color: var(--pink-2);
     }
 
@@ -295,7 +335,7 @@
 
     .section-text {
       margin: 0;
-      color: #b8c3d4;
+      color: var(--text-card);
       line-height: 1.85;
     }
 
@@ -314,7 +354,7 @@
       border-radius: var(--radius);
       border: 1px solid var(--border);
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)),
+        linear-gradient(180deg, var(--card-bg-from), var(--card-bg-to)),
         var(--bg-alt);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -341,7 +381,7 @@
 
     .card p,
     .card li {
-      color: #acb6c4;
+      color: var(--text-card);
       line-height: 1.8;
       font-size: 0.96rem;
     }
@@ -461,7 +501,7 @@
 
     .card-text {
       margin: 0.55rem 0 0;
-      color: #acb6c4;
+      color: var(--text-card);
       font-size: 0.98rem;
       line-height: 1.7;
     }
@@ -475,8 +515,8 @@
       margin-top: 1rem;
       padding: 1rem;
       border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--card-bg-from), var(--card-bg-to));
       color: var(--pink-2);
       font-weight: 700;
       font-size: 1rem;
@@ -505,7 +545,7 @@
     .availability {
       margin-top: 1.5rem;
       text-align: center;
-      color: #dbe4f3;
+      color: var(--text-sub);
       font-size: 1rem;
       line-height: 1.7;
       letter-spacing: -0.01em;
@@ -793,15 +833,27 @@
         drops = Array.from({ length: columns }, () => Math.floor(Math.random() * height / fontSize));
       }
 
+      function getMatrixColor() {
+        return window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "rgba(194, 0, 62, 0.5)"
+          : "#ff6fa3";
+      }
+
+      function getFadeColor() {
+        return window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "rgba(253, 246, 248, 0.12)"
+          : "rgba(7, 9, 15, 0.06)";
+      }
+
       function draw(timestamp = 0) {
         if (timestamp - lastFrame < frameDelay) {
           animationId = requestAnimationFrame(draw);
           return;
         }
         lastFrame = timestamp;
-        ctx.fillStyle = "rgba(7, 9, 15, 0.06)";
+        ctx.fillStyle = getFadeColor();
         ctx.fillRect(0, 0, width, height);
-        ctx.fillStyle = "#ff6fa3";
+        ctx.fillStyle = getMatrixColor();
         ctx.font = `${fontSize}px monospace`;
         for (let i = 0; i < drops.length; i++) {
           const char = chars[Math.floor(Math.random() * chars.length)];
@@ -824,6 +876,11 @@
       document.addEventListener("visibilitychange", () => {
         if (document.hidden) cancelAnimationFrame(animationId);
         else animationId = requestAnimationFrame(draw);
+      });
+
+      window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", () => {
+        cancelAnimationFrame(animationId);
+        animationId = requestAnimationFrame(draw);
       });
     })();
   </script>
