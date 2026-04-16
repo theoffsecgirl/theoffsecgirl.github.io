@@ -19,8 +19,8 @@
   <meta name="twitter:title" content="theoffsecgirl | Bug Hunter & Security Researcher" />
   <meta name="twitter:description" content="Offensive security researcher, bug hunter and tool developer. Breaking attack surfaces, building tooling and teaching cybersecurity." />
 
-  <!-- Favicon SVG -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234da3ff'/%3E%3Cstop offset='100%25' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0a'/%3E%3Cg fill='url(%23g)'%3E%3C!-- body --%3E%3Cellipse cx='16' cy='17' rx='2.2' ry='5.5'/%3E%3C!-- left wings --%3E%3Cpath d='M14 14 C10 10 4 11 4 15 C4 18 9 19 14 17 Z'/%3E%3Cpath d='M14 17 C8 17 5 20 6 23 C7 25 12 24 14 20 Z'/%3E%3C!-- right wings --%3E%3Cpath d='M18 14 C22 10 28 11 28 15 C28 18 23 19 18 17 Z'/%3E%3Cpath d='M18 17 C24 17 27 20 26 23 C25 25 20 24 18 20 Z'/%3E%3C!-- antennae --%3E%3Cline x1='15' y1='12' x2='12' y2='7' stroke='url(%23g)' stroke-width='1.2' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='7' r='1' fill='%234da3ff'/%3E%3Cline x1='17' y1='12' x2='20' y2='7' stroke='url(%23g)' stroke-width='1.2' stroke-linecap='round'/%3E%3Ccircle cx='20' cy='7' r='1' fill='%238b5cf6'/%3E%3C/g%3E%3C/svg%3E" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,13 +32,12 @@
       --bg-alt: rgba(17, 17, 17, 0.82);
       --text: #d7dde7;
       --muted: #9aa4b2;
-      --blue: #4da3ff;
-      --blue-2: #6bb6ff;
-      --purple: #8b5cf6;
+      --pink: #FF2D78;
+      --pink-2: #ff6fa3;
       --white: #ffffff;
-      --border: rgba(77, 163, 255, 0.16);
-      --border-strong: rgba(77, 163, 255, 0.35);
-      --shadow: 0 0 30px rgba(77, 163, 255, 0.18);
+      --border: rgba(255, 45, 120, 0.16);
+      --border-strong: rgba(255, 45, 120, 0.45);
+      --shadow: 0 0 30px rgba(255, 45, 120, 0.15);
       --radius: 22px;
       --max-width: 1180px;
       --transition: 180ms ease;
@@ -53,9 +52,9 @@
       color: var(--text);
       font-family: "Fira Code", monospace;
       background:
-        radial-gradient(circle at top, rgba(77, 163, 255, 0.12), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.10), transparent 30%),
-        linear-gradient(135deg, #07090f 0%, #0d1527 48%, #101b36 100%);
+        radial-gradient(circle at top, rgba(255, 45, 120, 0.10), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255, 45, 120, 0.07), transparent 30%),
+        linear-gradient(135deg, #07090f 0%, #130a10 48%, #1a0d15 100%);
       overflow-x: hidden;
       position: relative;
     }
@@ -74,7 +73,7 @@
     .scanline {
       z-index: 2;
       height: 2px;
-      background: linear-gradient(90deg, transparent, var(--blue-2), transparent);
+      background: linear-gradient(90deg, transparent, var(--pink-2), transparent);
       animation: scan 4s linear infinite;
     }
 
@@ -108,7 +107,20 @@
       box-shadow: var(--shadow);
     }
 
-    .nav-brand { font-weight: 700; color: var(--white); letter-spacing: -0.02em; }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-brand img {
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
 
     .nav-links {
       display: flex;
@@ -126,14 +138,28 @@
       padding: 2.4rem 0 1.8rem;
     }
 
+    .hero-logo {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 1.4rem;
+      display: block;
+      filter: drop-shadow(0 0 24px rgba(255, 45, 120, 0.45));
+      animation: floatLogo 4s ease-in-out infinite;
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
     .eyebrow {
       display: inline-block;
       padding: 0.48rem 0.92rem;
       margin-bottom: 1.15rem;
       border: 1px solid var(--border);
       border-radius: 999px;
-      background: rgba(77, 163, 255, 0.08);
-      color: var(--blue-2);
+      background: rgba(255, 45, 120, 0.08);
+      color: var(--pink-2);
       font-size: 0.85rem;
       box-shadow: var(--shadow);
     }
@@ -146,13 +172,22 @@
       font-weight: 700;
       display: block;
       padding-bottom: 0.08em;
-      background: linear-gradient(90deg, #69b7ff 0%, #7c8cff 45%, #9d6bff 100%);
+      background: linear-gradient(90deg, #ff6fa3 0%, #FF2D78 50%, #c4005a 100%);
       background-size: 220% 220%;
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       animation: gradientShift 4s ease infinite;
-      text-shadow: 0 0 28px rgba(77,163,255,0.16);
+      text-shadow: none;
+    }
+
+    .tagline {
+      margin: 0.6rem 0 0;
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      color: var(--pink-2);
+      letter-spacing: 0.05em;
+      font-style: italic;
+      opacity: 0.9;
     }
 
     @keyframes gradientShift {
@@ -176,7 +211,7 @@
       padding: 0.82rem 1.2rem;
       border-radius: 16px;
       background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,45,120,0.18);
       box-shadow: 0 12px 32px rgba(0,0,0,0.24);
       font-size: 0.96rem;
     }
@@ -198,6 +233,7 @@
       border-radius: 16px;
       border: 1px solid var(--border);
       font-weight: 700;
+      font-family: "Fira Code", monospace;
       transition:
         transform var(--transition),
         border-color var(--transition),
@@ -207,21 +243,21 @@
     }
 
     .btn-primary {
-      background: rgba(77,163,255,0.12);
+      background: rgba(255,45,120,0.15);
       color: var(--white);
-      box-shadow: 0 0 18px rgba(77,163,255,0.24);
+      box-shadow: 0 0 18px rgba(255,45,120,0.28);
     }
 
     .btn-primary:hover,
     .btn-primary:focus-visible {
-      background: rgba(77,163,255,0.18);
-      border-color: var(--blue-2);
+      background: rgba(255,45,120,0.25);
+      border-color: var(--pink-2);
       transform: translateY(-2px);
     }
 
     .btn-secondary {
       background: rgba(255,255,255,0.03);
-      color: var(--blue-2);
+      color: var(--pink-2);
     }
 
     .btn-secondary:hover,
@@ -239,14 +275,14 @@
     }
 
     .section-kicker {
-      color: var(--blue-2);
+      color: var(--pink-2);
       font-size: 0.88rem;
       margin-bottom: 0.6rem;
       display: inline-block;
       border: 1px solid var(--border);
       border-radius: 999px;
       padding: 0.4rem 0.8rem;
-      background: rgba(77,163,255,0.07);
+      background: rgba(255,45,120,0.07);
     }
 
     .section-title {
@@ -294,13 +330,13 @@
     .card:focus-within {
       transform: translateY(-6px);
       border-color: var(--border-strong);
-      box-shadow: 0 18px 40px rgba(77,163,255,0.18);
+      box-shadow: 0 18px 40px rgba(255,45,120,0.18);
     }
 
     .mini-title {
       margin: 0 0 0.75rem;
       font-size: 1.05rem;
-      color: var(--blue-2);
+      color: var(--pink-2);
     }
 
     .card p,
@@ -329,7 +365,7 @@
     .project-link {
       display: inline-block;
       margin-top: 0.8rem;
-      color: var(--blue-2);
+      color: var(--pink-2);
       font-weight: 700;
     }
 
@@ -387,22 +423,22 @@
     }
 
     .linkedin .icon-wrap {
-      background: linear-gradient(135deg, #3aa4ff, #00d2a8);
-      box-shadow: 0 0 18px rgba(58,164,255,0.20);
+      background: linear-gradient(135deg, #ff6fa3, #FF2D78);
+      box-shadow: 0 0 18px rgba(255,45,120,0.25);
     }
-    .linkedin .icon-wrap::after { box-shadow: 0 0 34px rgba(58,164,255,0.35); }
+    .linkedin .icon-wrap::after { box-shadow: 0 0 34px rgba(255,45,120,0.35); }
 
     .email .icon-wrap {
-      background: linear-gradient(135deg, #5f8bff, #7b61ff);
-      box-shadow: 0 0 18px rgba(95,139,255,0.22);
+      background: linear-gradient(135deg, #ff3d8a, #c4005a);
+      box-shadow: 0 0 18px rgba(255,45,120,0.25);
     }
-    .email .icon-wrap::after { box-shadow: 0 0 34px rgba(95,139,255,0.34); }
+    .email .icon-wrap::after { box-shadow: 0 0 34px rgba(255,45,120,0.30); }
 
     .github .icon-wrap {
-      background: linear-gradient(135deg, #14161b, #2c3140);
-      box-shadow: 0 0 18px rgba(255,255,255,0.08);
+      background: linear-gradient(135deg, #1a0d15, #2c1420);
+      box-shadow: 0 0 18px rgba(255,45,120,0.12);
     }
-    .github .icon-wrap::after { box-shadow: 0 0 34px rgba(255,255,255,0.12); }
+    .github .icon-wrap::after { box-shadow: 0 0 34px rgba(255,45,120,0.18); }
 
     .icon-wrap svg {
       width: 38px;
@@ -419,8 +455,8 @@
     .card-title {
       margin: 0;
       font-size: 1.22rem;
-      color: var(--blue-2);
-      text-shadow: 0 0 10px rgba(77,163,255,0.38);
+      color: var(--pink-2);
+      text-shadow: 0 0 10px rgba(255,45,120,0.38);
     }
 
     .card-text {
@@ -441,9 +477,10 @@
       border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.08);
       background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-      color: #8dc3ff;
+      color: var(--pink-2);
       font-weight: 700;
       font-size: 1rem;
+      font-family: "Fira Code", monospace;
       transition:
         transform var(--transition),
         border-color var(--transition),
@@ -459,9 +496,9 @@
     .contact-link:focus-visible {
       outline: none;
       color: var(--white);
-      background: rgba(77,163,255,0.10);
-      border-color: var(--blue-2);
-      box-shadow: 0 0 18px rgba(77,163,255,0.26);
+      background: rgba(255,45,120,0.10);
+      border-color: var(--pink-2);
+      box-shadow: 0 0 18px rgba(255,45,120,0.26);
       transform: scale(1.02);
     }
 
@@ -482,6 +519,8 @@
       font-size: 0.95rem;
     }
 
+    .footer span { color: var(--pink); }
+
     @media (max-width: 1100px) {
       .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .grid-3, .contact-grid { grid-template-columns: 1fr; }
@@ -498,6 +537,7 @@
       }
       .nav-links { gap: 0.8rem; }
       .hero { padding-top: 1.2rem; }
+      .hero-logo { width: 100px; height: 100px; }
       .grid-4 { grid-template-columns: 1fr; }
       .card { padding: 1.15rem; }
       .card-head {
@@ -524,7 +564,10 @@
 
   <main class="shell">
     <nav class="nav" aria-label="Main navigation">
-      <div class="nav-brand">theoffsecgirl</div>
+      <div class="nav-brand">
+        <img src="logo-theoffsecgirl-pink.svg" alt="theoffsecgirl logo" />
+        theoffsecgirl
+      </div>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#work">Work</a>
@@ -534,8 +577,10 @@
     </nav>
 
     <header class="hero">
+      <img class="hero-logo" src="logo-theoffsecgirl-pink.svg" alt="theoffsecgirl spider logo" />
       <div class="eyebrow">[ offensive mindset · practical execution ]</div>
       <h1 class="title">theoffsecgirl</h1>
+      <p class="tagline">Pink lines. Red team.</p>
       <p class="subtitle">
         I break down web attack surfaces, build offensive tooling and turn weak signals into real findings.
       </p>
@@ -660,9 +705,9 @@
             <div class="icon-wrap" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none">
                 <rect x="4.2" y="4.2" width="15.6" height="15.6" rx="3.4" fill="rgba(255,255,255,0.95)"/>
-                <path d="M8.1 10.1H10.5V17H8.1V10.1Z" fill="#0E7490"/>
-                <path d="M9.3 9.2C10.0732 9.2 10.7 8.5732 10.7 7.8C10.7 7.0268 10.0732 6.4 9.3 6.4C8.5268 6.4 7.9 7.0268 7.9 7.8C7.9 8.5732 8.5268 9.2 9.3 9.2Z" fill="#0E7490"/>
-                <path d="M11.9 10.1H14.2V11.05C14.58 10.47 15.28 9.9 16.45 9.9C18.68 9.9 19 11.37 19 13.28V17H16.6V13.86C16.6 12.84 16.58 11.53 15.17 11.53C13.73 11.53 13.5 12.65 13.5 13.78V17H11.9V10.1Z" fill="#0E7490"/>
+                <path d="M8.1 10.1H10.5V17H8.1V10.1Z" fill="#FF2D78"/>
+                <path d="M9.3 9.2C10.0732 9.2 10.7 8.5732 10.7 7.8C10.7 7.0268 10.0732 6.4 9.3 6.4C8.5268 6.4 7.9 7.0268 7.9 7.8C7.9 8.5732 8.5268 9.2 9.3 9.2Z" fill="#FF2D78"/>
+                <path d="M11.9 10.1H14.2V11.05C14.58 10.47 15.28 9.9 16.45 9.9C18.68 9.9 19 11.37 19 13.28V17H16.6V13.86C16.6 12.84 16.58 11.53 15.17 11.53C13.73 11.53 13.5 12.65 13.5 13.78V17H11.9V10.1Z" fill="#FF2D78"/>
               </svg>
             </div>
             <div>
@@ -680,9 +725,9 @@
             <div class="icon-wrap" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none">
                 <rect x="3.4" y="6.3" width="17.2" height="11.4" rx="2.2" fill="rgba(255,255,255,0.95)"/>
-                <path d="M5.9 8.3L12 13.1L18.1 8.3" stroke="#5B6CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M6.1 16.2L10.1 12.9" stroke="#5B6CFF" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M17.9 16.2L13.9 12.9" stroke="#5B6CFF" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M5.9 8.3L12 13.1L18.1 8.3" stroke="#FF2D78" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.1 16.2L10.1 12.9" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M17.9 16.2L13.9 12.9" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/>
               </svg>
             </div>
             <div>
@@ -715,7 +760,7 @@
     </section>
 
     <footer class="footer">
-      <span>© 2026 theoffsecgirl</span>
+      <span>© 2026 theoffsecgirl</span> &nbsp;·&nbsp; <em style="color: var(--pink-2); font-style: italic;">Pink lines. Red team.</em>
     </footer>
   </main>
 
@@ -756,7 +801,7 @@
         lastFrame = timestamp;
         ctx.fillStyle = "rgba(7, 9, 15, 0.06)";
         ctx.fillRect(0, 0, width, height);
-        ctx.fillStyle = "#5ea8ff";
+        ctx.fillStyle = "#ff6fa3";
         ctx.font = `${fontSize}px monospace`;
         for (let i = 0; i < drops.length; i++) {
           const char = chars[Math.floor(Math.random() * chars.length)];
